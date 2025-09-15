@@ -18,8 +18,9 @@ st.title("💬 Sentiment Analysis Web Application")
 st.markdown(
     """
     <div style="background-color:#f9f9f9;padding:10px;border-radius:10px;">
-    <h3 style="color:#4a90e2;">Welcome!</h3>
-    <p>Enter a piece of text below and our smart ML model will analyze its sentiment 🎉</p>
+    <h3 style="color:#4a90e2;">Welcome to our sentiment anlysis web page 
+    
+    🎉</h3>
     </div>
     """, unsafe_allow_html=True
 )
@@ -64,6 +65,7 @@ name = st.sidebar.text_input("Please enter your name")
 with st.sidebar.expander("Rate Our Application"):
     rating = st.slider("Please rate our application on the basis of performance", 1, 5, 3)
     st.write(f"HEY {name}, You rated our application {rating} out of 5")
+
 
 
 
