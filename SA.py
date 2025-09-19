@@ -2,6 +2,7 @@ import streamlit as st
 import pickle
 from PIL import Image
 
+# Load model and vectorizer
 @st.cache_resource
 def load_model_and_vectorizer():
     with open('vectorizer.pkl', 'rb') as f:
@@ -18,7 +19,7 @@ st.title("💬 Sentiment Analysis Web Application")
 st.markdown(
     """
     <div style="background-color:#f9f9f9;padding:10px;border-radius:10px;">
-    <h3 style="color:#4a90e2;">Welcome to our sentiment anlysis web page 
+    <h3 style="color:#4a90e2;">Welcome to our sentiment analysis web page 
     
     🎉</h3>
     </div>
@@ -34,7 +35,7 @@ if user_input:
         input_vector = vectorizer.transform([user_input])
         prediction = model.predict(input_vector)[0]
 
-        # Show prediction 
+        # Show prediction with colorful display
         sentiment_icon = "✅" if prediction in [0, 'positive', 'happy'] else "⚠️"
         sentiment_color = "#a5c072" if prediction in [0, 'positive', 'happy'] else "#3cc5e7"
 
@@ -44,7 +45,7 @@ if user_input:
             </div>
         """, unsafe_allow_html=True)
 
-        # Show confidence 
+        # Show confidence if available
         if hasattr(model, 'predict_proba'):
             confidences = model.predict_proba(input_vector)[0]
             max_confidence = max(confidences)
@@ -65,6 +66,9 @@ name = st.sidebar.text_input("Please enter your name")
 with st.sidebar.expander("Rate Our Application"):
     rating = st.slider("Please rate our application on the basis of performance", 1, 5, 3)
     st.write(f"HEY {name}, You rated our application {rating} out of 5")
+
+
+
 
 
 
