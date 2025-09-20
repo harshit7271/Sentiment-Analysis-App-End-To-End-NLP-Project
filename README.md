@@ -4,6 +4,11 @@
 This project showcases a powerful **Sentiment Analysis** pipeline built with Python using machine learning techniques. It predicts the emotional tone (sentiment) of an input text — whether it's happy, sad, angry, or any other emotion expressed in the text.
 
 ---
+## 🚀 Live Demo
+
+<a href="https://ggkplbcecaqrhzfwsmr7aw.streamlit.app/" target="_blank">
+  <img src="https://img.shields.io/badge/Live%20Demo-Open%20App-brightgreen?style=for-the-badge&logo=streamlit" alt="Live Demo"/>
+</a>
 
 ## 🔍 What Does It Do?
 
